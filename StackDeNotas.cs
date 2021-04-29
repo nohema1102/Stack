@@ -16,9 +16,31 @@ namespace Stack
             //La parte de arriba del stack es el final de la lista
             this.notas.Add(nota);
         }
+
+        public string Pop() //pop:Quitar el valor que esta arriba y devolverlo
+        {
+            //1 Devolver valor
+            //2 Borrar
+
+            //Paso 1 Respaldar valor
+            string value = this.notas[this.notas.Count - 1];
+            // Paso 2 Borrar de la lista
+            this.notas.RemoveAt(this.notas.Count - 1);
+            //Devolver el palor respaldado
+            return value;
+        }
         public string Peek()
         {
            return this.notas[this.notas.Count - 1];
         }
+        public void PrintStack()
+        
+        {
+           for (int i = this.notas.Count - 1  ; i >= 0; i--)
+           {
+               Console.WriteLine(notas[i]);
+           }
+        }
+
     }
 }
