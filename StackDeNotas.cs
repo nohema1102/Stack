@@ -10,7 +10,10 @@ namespace Stack
         //Pop > ver + quitar
 
         //Imprimir stack
-
+        public int Count
+        {
+            get => this.notas.Count;
+        }
         public void Push(string nota)
         {
             //La parte de arriba del stack es el final de la lista
@@ -31,7 +34,16 @@ namespace Stack
         }
         public string Peek()
         {
-           return this.notas[this.notas.Count - 1];
+            if(this.notas.Count == 0)
+            {
+                Console.WriteLine("No hay elementos en el stack");
+                return null;
+            }
+            else 
+            {
+                return this.notas[this.notas.Count - 1];
+            }
+           
         }
         public void PrintStack()
         

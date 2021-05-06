@@ -23,11 +23,12 @@ namespace Stack
         {
             opcion = "";
             //pedir opcion
-            while(opcion != "1" && opcion!= "2" && opcion!= "3" && opcion != "9")
+            while(opcion != "1" && opcion!= "2" && opcion!= "3" && opcion!= "4"&& opcion != "9")
           {
                 Console.WriteLine("1) Imprimir notas");
                 Console.WriteLine("2) Agregar nota (Push)");
                 Console.WriteLine("3) Quitar nota (Pop)");
+                Console.WriteLine("4) Consultar un elemento (Peek)");
                 Console.WriteLine("9) Salir");
 
                 Console.WriteLine("Por favor selecciona una opción ");
@@ -35,7 +36,7 @@ namespace Stack
 
             //Validar la opcion seleccionada hasta que se introduzca una opcion correcta 
             //o mietras no se haya introducido una opcion correcta
-            if(opcion != "1" && opcion!= "2" && opcion != "9")
+            if(opcion != "1" && opcion!= "2" && opcion!= "3"&& opcion!= "4"&& opcion != "9")
             {
                 Console.WriteLine("La opcion seleccionada no es válida");
             }
@@ -59,6 +60,13 @@ namespace Stack
                 //Pop
                 string nota = stackDeNotas.Pop();
                 Console.WriteLine("Nota removida");
+                Console.WriteLine(nota);
+            }
+            else if(opcion == "4")
+            {
+                //Peek
+                string nota = stackDeNotas.Peek();
+                Console.WriteLine("Nota consultada: ");
                 Console.WriteLine(nota);
             }
             else if(opcion == "9")
